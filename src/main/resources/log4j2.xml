@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+  <Appenders>
+    <RollingFile name="File" fileName="log/coupon.log">
+        <PatternLayout pattern="%d %p %C{0} [%t] %m%n"/>
+        <filePattern>coupon.%i.log.gz</filePattern>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+    <Root level="debug">
+      <AppenderRef ref="File"/>
+    </Root>
+  </Loggers>
+
+</Configuration>
