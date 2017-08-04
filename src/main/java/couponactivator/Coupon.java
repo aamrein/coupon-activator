@@ -33,32 +33,32 @@ public class Coupon {
     private String redeemedDate = "";
 
     public Coupon (JSONObject data) {
-        this.id = data.getString("id");
+        this.id = data.isNull("id") ? "" : data.getString("id");
         this.couponId = data.getInt("couponId");
-        this.name = data.getString("name");
-        this.nameWeb = data.getString("nameWeb");
-        this.nameApp = data.getString("nameApp");
+        this.name = data.isNull("name") ? "" : data.getString("name");
+        this.nameWeb = data.isNull("nameWeb") ? "" : data.getString("nameWeb");
+        this.nameApp = data.isNull("nameApp") ? "" : data.getString("nameApp");
         this.subTitle = data.isNull("subTitle") ? "" : data.getString("subTitle");
-        this.group = data.getString("group");
-        this.minimumPurchase = data.getString("minimumPurchase");
-        this.discountAmount = data.getString("discountAmount");
-        this.disclaimerLeadActive = data.getString("disclaimerLeadActive");
-        this.disclaimerLeadInactive = data.getString("disclaimerLeadInactive");
-        this.disclaimerBody = data.getString("disclaimerBody");
-        this.promotionNumber = data.getString("promotionNumber");
-        this.finePrint = data.getString("finePrint");
+        this.group = data.isNull("group") ? "" : data.getString("group");
+        this.minimumPurchase = data.isNull("minimumPurchase") ? "" : data.getString("minimumPurchase");
+        this.discountAmount = data.isNull("discountAmount") ? "" : data.getString("discountAmount");
+        this.disclaimerLeadActive = data.isNull("disclaimerLeadActive") ? "" : data.getString("disclaimerLeadActive");
+        this.disclaimerLeadInactive = data.isNull("disclaimerLeadInactive") ? "" : data.getString("disclaimerLeadInactive");
+        this.disclaimerBody = data.isNull("disclaimerBody") ? "" : data.getString("disclaimerBody");
+        this.promotionNumber = data.isNull("promotionNumber") ? "" : data.getString("promotionNumber");
+        this.finePrint = data.isNull("finePrint") ? "" : data.getString("finePrint");
         this.quantity = data.getInt("quantity");
         this.stationaryRedeemable = data.getBoolean("stationaryRedeemable");
         this.onlineRedeemable = data.getBoolean("onlineRedeemable");
-        this.ean = data.getString("ean");
-        this.state = data.getString("state");
-        this.type = data.getString("type");
+        this.ean = data.isNull("ean") ? "" : data.getString("ean");
+        this.state = data.isNull("state") ? "" : data.getString("state");
+        this.type = data.isNull("type") ? "" : data.getString("type");
         this.newCoupon = data.getBoolean("newCoupon");
-        this.expirationDateText = data.getString("expirationDateText");
+        this.expirationDateText = data.isNull("expirationDateText") ? "" : data.getString("expirationDateText");
         this.redeemedDateText = data.isNull("redeemedDateText") ? "" : data.getString("redeemedDateText");
         this.redeemedText = data.isNull("redeemedText") ? "" : data.getString("redeemedText");
-        this.activationDisabledText = data.getString("activationDisabledText");
-        this.expirationDate = data.getString("expirationDate");
+        this.activationDisabledText = data.isNull("activationDisabledText") ? "" : data.getString("activationDisabledText");
+        this.expirationDate = data.isNull("expirationDate") ? "" : data.getString("expirationDate");
         this.redeemedDate = data.isNull("redeemedDate") ? "" : data.getString("redeemedDate");
     }
 
