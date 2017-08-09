@@ -4,7 +4,7 @@ import couponactivator.Coupon;
 
 import java.util.function.Predicate;
 
-public class ExceptTypeFilter implements CouponFilter{
+public class ExceptTypeFilter implements Predicate<Coupon>{
 
     private final String type;
 
@@ -13,8 +13,7 @@ public class ExceptTypeFilter implements CouponFilter{
     }
 
     @Override
-    public Predicate<Coupon> getCouponFilterFunction() {
-        return coupon -> coupon.getType().equals(this.type);
+    public boolean test(Coupon coupon) {
+        return coupon.getType().equals(this.type);
     }
-
 }

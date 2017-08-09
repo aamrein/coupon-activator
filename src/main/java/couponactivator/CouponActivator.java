@@ -2,7 +2,6 @@ package couponactivator;
 
 import couponactivator.cli.CliArgs;
 import couponactivator.cli.CliParser;
-import couponactivator.filter.CouponFilter;
 import couponactivator.filter.ExceptTypeFilter;
 import couponactivator.filter.OnlyStateFilter;
 import org.apache.logging.log4j.LogManager;
@@ -10,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.function.Predicate;
 
 public class CouponActivator {
 
@@ -19,8 +19,8 @@ public class CouponActivator {
         CliArgs cliArgs = CliParser.parse(args);
         CouponService couponService = new CouponService(cliArgs);
 
-        ArrayList<CouponFilter> couponFilters = new ArrayList<>();
-        couponFilters.add(new OnlyStateFilter(couponService.COUPON_STATE_INACTIVE));
+        ArrayList<Predicate<Coupon>> couponFilters = new ArrayList<>();
+        couponFilters.add(new OnlyStateFilter(couponService.getCOUPON_STATE_INACTIVE()));
         if(cliArgs.hasTypeFilter()) {
             couponFilters.add(new ExceptTypeFilter(cliArgs.getTypeFilter()));
         }
@@ -29,7 +29,7 @@ public class CouponActivator {
         printCouponStates(couponService);
     }
 
-    private static void activate(CouponService couponService, ArrayList<CouponFilter> couponFilters) {
+    private static void activate(CouponService couponService, ArrayList<Predicate<Coupon>> couponFilters) {
         Collection<Coupon> deactivatedCoupons = couponService.getFilteredCouponList(couponFilters);
         for (Coupon coupon : deactivatedCoupons) {
             logger.info("Activate coupon {}", coupon.getCouponId());

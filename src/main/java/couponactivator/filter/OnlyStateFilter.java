@@ -4,7 +4,7 @@ import couponactivator.Coupon;
 
 import java.util.function.Predicate;
 
-public class OnlyStateFilter implements CouponFilter {
+public class OnlyStateFilter implements Predicate<Coupon> {
 
     public final String state;
 
@@ -13,7 +13,7 @@ public class OnlyStateFilter implements CouponFilter {
     }
 
     @Override
-    public Predicate<Coupon> getCouponFilterFunction() {
-        return coupon -> !coupon.getState().equals(state);
+    public boolean test(Coupon coupon) {
+        return !coupon.getState().equals(state);
     }
 }

@@ -1,0 +1,31 @@
+package couponactivator
+
+data class Coupon(
+    var id: String,
+    var couponId: Int,
+    var name: String,
+    var nameWeb: String,
+    var nameApp: String,
+    var subTitle: String,
+    var group: String,
+    var minimumPurchase: String,
+    var discountAmount: String,
+    var disclaimerLeadActive: String,
+    var disclaimerLeadInactive: String,
+    var disclaimerBody: String,
+    var promotionNumber: String,
+    var finePrint: String,
+    var quantity: Int,
+    var isStationaryRedeemable: Boolean,
+    var isOnlineRedeemable: Boolean,
+    var ean: String,
+    var state: String,
+    var type: String,
+    var isNewCoupon: Boolean,
+    var expirationDateText: String,
+    var redeemedDateText: String,
+    var redeemedText: String,
+    var activationDisabledText: String,
+    var expirationDate: String,
+    var redeemedDate: String
+)
