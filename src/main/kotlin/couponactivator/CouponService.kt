@@ -50,7 +50,7 @@ class CouponService internal constructor(private val cliArgs: CliArgs) {
         openIdLogin()
 
         val url = HttpUrl
-                .parse("https://www.migros.ch/mgb-rest/dirac-cms-core/components/couponOverview.json")
+                .parse("https://www.migros.ch/mgb-rest/api/dirac-cms-core/components/couponOverview.json")
                 .newBuilder()
                 .addQueryParameter("method", "getCoupons")
                 .addQueryParameter("lang", "de")
