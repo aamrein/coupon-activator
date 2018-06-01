@@ -24,30 +24,8 @@ class CouponFactory {
             id = getString(data, "id"),
             couponId = data.getInt("couponId"),
             name = getString(data, "name"),
-            nameWeb = getString(data, "nameWeb"),
-            nameApp = getString(data, "nameApp"),
-            subTitle = getString(data, "subTitle"),
-            group = getString(data, "group"),
-            minimumPurchase = getString(data, "minimumPurchase"),
-            discountAmount = getString(data, "discountAmount"),
-            disclaimerLeadActive = getString(data, "disclaimerLeadActive"),
-            disclaimerLeadInactive = getString(data, "disclaimerLeadInactive"),
-            disclaimerBody = getString(data, "disclaimerBody"),
-            promotionNumber = getString(data, "promotionNumber"),
-            finePrint = getString(data, "finePrint"),
-            quantity = data.getInt("quantity"),
-            isStationaryRedeemable = data.getBoolean("stationaryRedeemable"),
-            isOnlineRedeemable = data.getBoolean("onlineRedeemable"),
-            ean = getString(data, "ean"),
             state = getString(data, "state"),
-            type = getString(data, "type"),
-            isNewCoupon = data.getBoolean("newCoupon"),
-            expirationDateText = getString(data, "expirationDateText"),
-            redeemedDateText = getString(data, "redeemedDateText"),
-            redeemedText = getString(data, "redeemedText"),
-            activationDisabledText = getString(data, "activationDisabledText"),
-            expirationDate = getString(data, "expirationDate"),
-            redeemedDate = getString(data, "redeemedDate")
+            type = getString(data, "type")
         )
 
         return coupon
